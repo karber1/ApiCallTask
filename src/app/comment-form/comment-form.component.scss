@@ -1,0 +1,35 @@
+
+
+
+.form-container{
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    form{
+        display:flex;
+        flex-direction: column;
+        color: lightgray;
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active  {
+        
+            
+            -webkit-box-shadow: 0 0 0 30px rgb(22, 16, 37) inset !important;
+
+        }
+        input:-webkit-autofill {
+            -webkit-text-fill-color: lightgray !important;
+        }
+        div{
+            height: 20px;
+        }
+    }
+}
+
+.mat-form-field{
+    margin-bottom: 20px;
+} 
+
+

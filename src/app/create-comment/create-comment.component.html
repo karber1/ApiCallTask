@@ -1,0 +1,11 @@
+<div class="comment-container">
+        <h2>{{userComment ? userComment.name : ''}}</h2>
+        <p>{{userComment? userComment.body : ''}}</p>
+        <div>
+            <p>{{userComment? userComment.email : ''}}</p>
+            <p>{{userComment? 'User Id: ' + userComment.postId : ''}}</p>
+            <p>{{userComment? 'Id: ' + userComment.id : ''}}</p>
+        </div>
+    </div>
+
+    <app-comment-form (commentEvent)="receiveValues($event)"></app-comment-form>

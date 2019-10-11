@@ -1,0 +1,21 @@
+<div>
+    <div class="route-container">
+        <ul> 
+            <li><button mat-button color="primary" [routerLink]="['/content', 5]">Show 5 comments</button></li>
+            <li><button mat-button color="primary" [routerLink]="['/content', 15]">Show 15 comments</button></li>
+            <li><button mat-button color="primary" [routerLink]="['/content', 30]">Show 30 comments</button></li>
+        </ul>
+    </div>
+
+    <div *ngFor="let comment of comments" class="comment-container">
+        <h2>{{comment.name}}</h2>
+        <p>{{comment.body}}</p>
+        <div>
+            <p>{{comment.email}}</p>
+            <p>PostId: {{comment.postId}}</p>
+            <p>Id: {{comment.id}}</p>
+        </div>
+    </div>
+</div>
+
+

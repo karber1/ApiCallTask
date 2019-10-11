@@ -1,0 +1,18 @@
+.comment-container{
+    margin: 2% 2% 2% 50%;
+    transform:translateX(-50%);
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    color: lightgray;
+    
+    div{
+        display: flex;
+        flex-direction: row;
+
+        p{
+            margin: 5px;
+        }
+    }
+}

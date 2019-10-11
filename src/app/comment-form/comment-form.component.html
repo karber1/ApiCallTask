@@ -1,0 +1,66 @@
+<div class="form-container">
+    <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
+        <mat-form-field>
+            
+            <input matInput id="name" placeholder="Name here"
+            [(ngModel)]="commentObj.name" #name="ngModel" name="name" required minlength="2">
+
+            <mat-error *ngIf="name.invalid">
+               <mat-error *ngIf="name.errors.required">
+                   <p>Name is required</p>
+               </mat-error>
+               <mat-error *ngIf="name.errors.minlength">
+                   <p>Name must contain more then one letter</p>
+               </mat-error>
+            </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" id="body" placeholder="Content here"
+            [(ngModel)]="commentObj.body" #body="ngModel" name="body" required>
+
+            <mat-error *ngIf="body.invalid">
+                <mat-error *ngIf="body.errors.required">
+                    <p>Content is required</p>
+                </mat-error>
+            </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" id="email" placeholder="Email here"
+            [(ngModel)]="commentObj.email" #email="ngModel" name="email" required email minlength="6">
+
+            <mat-error *ngIf="email.invalid">
+                    <mat-error *ngIf="email.errors.required">
+                        <p>Email is required</p>
+                    </mat-error>
+                    <mat-error *ngIf="email.errors.email">
+                        <p>Must be a valid email-adress</p>
+                    </mat-error>
+                    <mat-error *ngIf="email.errors.minlength">
+                        <p>Must contain at least 6 letters</p>
+                    </mat-error>
+                </mat-error>
+
+        </mat-form-field> 
+        
+        <div></div>
+
+        <mat-form-field>
+            <input matInput type="text" id="postId" placeholder="User Id"
+            [(ngModel)]="commentObj.postId" #postId="ngModel" name="postId" >  
+
+        </mat-form-field>
+
+        <section>
+            <button [disabled]="commentForm.invalid"
+             mat-raised-button color="primary"
+            (click)="sendCommentValues()"
+            type="submit">Submit</button>
+        </section>
+    </form>
+    
+
+</div>
