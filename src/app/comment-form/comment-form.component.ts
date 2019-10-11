@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { FormDataService } from '../services/form-data.service';
+import { FormGroup} from '@angular/forms';
 import { Comments } from '../classes/comments';
 
 
@@ -15,7 +14,7 @@ import { Comments } from '../classes/comments';
 })
 export class CommentFormComponent implements OnInit {
 
-  constructor(private FormData: FormDataService) { }
+  constructor() { }
 
   commentForm: FormGroup;
 
